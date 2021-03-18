@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+
+$red: #ff7a7a;
+$green: #38cc8c;
+
+$blue: #6055a5;
+
+$darkBlue: #3e3c49;
+$grayishBlue: #b9b6d3;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  background-color: $red;
+  background-image: url(./images/bg-intro-mobile.png);
+  color: #fbf9fa;
+}
+
+.main_wrapper {
+  padding: 2rem 1rem;
+  min-height: 100vh;
+
+  .left_section {
+    text-align: center;
+
+    .heading {
+      margin-top: 3.5rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    p {
+      color: rgba($color: #fbf9fa, $alpha: 0.5);
+    }
+  }
+
+  .right_section {
+    padding: 2rem 0;
+    margin-top: 3rem;
+
+    .try_free-div {
+      background: #6055a5;
+      padding: 1rem 4rem;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 8px 0 rgba($color: $darkBlue, $alpha: 0.3);
+
+      .bold_text {
+        font-weight: 700;
+      }
+    }
+
+    .form_container {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 7px 0 rgba($color: $darkBlue, $alpha: 0.3);
+
+      .input_container {
+        position: relative;
+        margin-bottom: 1rem;
+
+        &:first-child,
+        &:nth-child(2) {
+          .input {
+            text-transform: capitalize;
+          }
+        }
+
+        .input {
+          padding: 1rem;
+          border-radius: 5px;
+          border: 1px solid $grayishBlue;
+          width: 100%;
+          outline: none;
+          color: $darkBlue;
+          font-weight: 600;
+          transition: border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+          &:focus,
+          &:active {
+            border: 1px solid $darkBlue;
+          }
+          &::placeholder {
+            font-weight: 600;
+          }
+        }
+        .error_icon {
+          position: absolute;
+          top: 15px;
+          right: 25px;
+          display: none;
+        }
+        .error_text {
+          display: none;
+          color: $red;
+          font-style: italic;
+          font-size: 12px;
+          margin-top: 5px;
+          justify-content: flex-end;
+        }
+      }
+      .input_container.error_field .input {
+        border: 1px solid $red;
+        &::placeholder {
+          color: $red;
+        }
+      }
+      .input_container.error_field > .error_icon,
+      .input_container.error_field > .error_text {
+        display: flex;
+      }
+
+      .submit_btn {
+        width: 100%;
+        border-radius: 5px;
+        padding: 1rem;
+        text-transform: uppercase;
+        border: none;
+        outline: none;
+        font-weight: 500;
+        font-size: 1rem;
+        color: #fbf9fa;
+        background-color: $green;
+        box-shadow: inset 0 -5px 0 rgba($color: $darkBlue, $alpha: 0.3);
+        margin-bottom: 1rem;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba($color: $green, $alpha: 0.7);
+        }
+      }
+
+      .terms_services {
+        color: $grayishBlue;
+        font-size: 14px;
+        text-align: center;
+
+        .terms_link {
+          color: $red;
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  body {
+    background-image: url(./images/bg-intro-desktop.png);
+  }
+  .main_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 5rem;
+
+    .left_section {
+      text-align: left;
+      margin-right: 5rem;
+
+      .heading {
+        font-size: 48px;
+        line-height: 1;
+        font-weight: 700;
+        margin-bottom: 1.75rem;
+        margin-top: 0;
+      }
+
+      p {
+        max-width: 500px;
+        color: #fbf9fa;
+      }
+    }
+    .right_section {
+      margin: 0;
+      padding: 0;
+
+      .form_container {
+        padding: 2.5rem;
+        .terms_services {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}

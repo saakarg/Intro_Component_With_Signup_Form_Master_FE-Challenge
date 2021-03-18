@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+
+    <title>Intro component with sign up form</title>
+  </head>
+  <body>
+    <div class="main_wrapper">
+      <div class="left_section">
+        <span class="heading">
+          Learn to code by <br />
+          watching others
+        </span>
+        <p>
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </div>
+      <div class="right_section">
+        <div class="try_free-div">
+          <p class="try_free">
+            <span class="bold_text">Try it free 7 days </span>then $20/mo.
+            thereafter
+          </p>
+        </div>
+        <form>
+          <div class="form_container">
+            <div class="input_container" id="first_name">
+              <input
+                onchange="validateInput(fName)"
+                type="text"
+                class="input first_name"
+                placeholder="First Name"
+              />
+              <img
+                src="./assets/images/icon-error.svg"
+                alt="error_icon"
+                class="error_icon"
+              />
+              <p class="error_text"></p>
+            </div>
+
+            <div class="input_container" id="last_name">
+              <input
+                onchange="validateInput(lName)"
+                type="text"
+                class="input last_name"
+                placeholder="Last Name"
+              />
+              <img
+                src="./assets/images/icon-error.svg"
+                alt="error_icon"
+                class="error_icon"
+              />
+              <p class="error_text"></p>
+            </div>
+
+            <div class="input_container" id="email">
+              <input
+                type="text"
+                class="input email"
+                placeholder="Email Address"
+              />
+              <img
+                src="./assets/images/icon-error.svg"
+                alt="error_icon"
+                class="error_icon"
+              />
+              <p class="error_text"></p>
+            </div>
+
+            <div class="input_container" id="password">
+              <input
+                onchange="validateInput(password)"
+                type="password"
+                class="input password"
+                placeholder="Password"
+              />
+              <img
+                src="./assets/images/icon-error.svg"
+                alt="error_icon"
+                class="error_icon"
+              />
+              <p class="error_text"></p>
+            </div>
+
+            <button class="submit_btn">Claim your free trial</button>
+
+            <p class="terms_services">
+              By clicking the button, you are agreeing to our
+              <a class="terms_link" href="./index.html">Terms and Services</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="./assets/index.js"></script>
+  </body>
+</html>
