@@ -6,18 +6,9 @@ const submitBtn = document.querySelector(".submit_btn");
 
 const validateInput = (el) => {
   // Checking if input class is empty
-  console.log(el);
   if (el.children[0].value === "") {
     el.classList.add("error_field");
-    if (el.id === "first_name") {
-      el.children[2].textContent = "First Name cannot be empty";
-    }
-    if (el.id === "last_name") {
-      el.children[2].textContent = "Last Name cannot be empty";
-    }
-    if (el.id === "password") {
-      el.children[2].textContent = "Password cannot be empty";
-    }
+    el.children[2].textContent = `${el.dataset.name} cannot be empty`;
   }
 
   // if not empty REMOVE error_field Class
